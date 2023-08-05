@@ -17,7 +17,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run start-all\" \"json-server --watch db.json --port 8080\"",
+    "start-all": "react-scripts start",
+    "json-server": "json-server --watch db.json --port 8080",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
